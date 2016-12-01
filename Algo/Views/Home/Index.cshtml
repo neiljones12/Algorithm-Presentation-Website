@@ -1,0 +1,293 @@
+﻿@{
+    ViewBag.Title = "NEIL";
+}
+<a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+<nav id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+        <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+        <li class="sidebar-brand">
+            <a href="#top" onclick=$("#menu-close").click();>SORTING ANALYSIS</a>
+        </li>
+        <li>
+            <a href="#top" onclick=$("#menu-close").click();>Home</a>
+        </li>
+        <li>
+            <a href="#about" onclick=$("#menu-close").click();>About</a>
+        </li>
+        <li>
+            <a href="#analysis" onclick=$("#menu-close").click();>Analysis</a>
+        </li>
+    </ul>
+</nav>
+<header id="top" class="header">
+    <div class="text-vertical-center">
+        <h1>ANALYSIS OF SORTING ALGORITHMS</h1>
+        <h3>Presented by NEIL & NISHANK</h3>
+        <br>
+        <a href="#about" class="btn btn-dark btn-lg">Lets Begin</a>
+    </div>
+</header>
+<section id="about" class="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>We implemented and compared the following algorithms</h2>
+                <p class="lead">MERGE SORT</p>
+                <p class="lead">HEAP SORT</p>
+                <p class="lead">QUICK SORT</p>
+                <p class="lead">INSERTION SORT</p>
+                <p class="lead">RADIX SORT</p>
+
+            </div>
+        </div>
+    </div>
+</section>
+<section id="analysis" class="services bg-primary">
+    <div class="container">
+        <div class="row text-center">
+
+            <div class="col-md-12">
+                <h1>
+                    <strong>SORTING A RANDOM LIST</strong>
+                </h1>
+                <p>
+
+                </p>
+                <hr class="small">
+                <div class="col-md-6">
+                    <canvas id="Random" width="400" height="400"></canvas>
+                </div>
+                <div class="col-md-6">
+                    <h1>TEST</h1>
+                </div>
+            </div>
+        </div>
+        <div class="row text-center" style="padding-top:50px">
+            <div class="col-md-12">
+                <h1>
+                    <strong>SORTING AN IN ORDER LIST</strong>
+                </h1>
+                <p>
+
+                </p>
+                <hr class="small">
+                <div class="col-md-6">
+                    <h1>TEST</h1>
+                </div>
+                <div class="col-md-6">
+                    <canvas id="InOrder" width="400" height="400"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="row text-center" style="padding-top:50px">
+            <div class="col-md-12" >
+                <h1>
+                    <strong>SORTING AN REVERSED LIST</strong>
+                </h1>
+                <p>
+
+                </p>
+                <hr class="small">
+                <div class="col-md-6">
+                    <canvas id="Reversed" width="400" height="400"></canvas>
+                </div>
+                <div class="col-md-6">
+                    <h1>TEST</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1 text-center">
+                <h4>
+                    <strong>CSE 5311 Design and Analysis of Algorithms Department of Computer Science and Engineering</strong>
+                </h4>
+                <p>
+                    CSE 5311-002
+                </p>
+                <hr class="small">
+                <p class="text-muted">Copyright &copy; NEIL JONES and NISHANK BHATNAGAR</p>
+            </div>
+        </div>
+    </div>
+    <a id="to-top" href="#top" class="btn btn-dark btn-lg"><i class="fa fa-chevron-up fa-fw fa-1x"></i></a>
+</footer>
+
+@section scripts{
+    <script>
+        var ctx = document.getElementById("Random");
+        var Random = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ["Merge Sort", "Heap Sort", "Quick Sort", "Insertion Sort", "Radix Sort"],
+                datasets: [{
+                    label: 'Time Taken To Sort in ms',
+                    data: [12, 19, 3, 5, 11],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+
+        // In ORDER
+
+        var ctx = document.getElementById("InOrder");
+        var Random = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ["Merge Sort", "Heap Sort", "Quick Sort", "Insertion Sort", "Radix Sort"],
+                datasets: [{
+                    label: 'Time Taken To Sort in ms',
+                    data: [12, 19, 3, 5, 11],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+
+        // Reversed
+
+        var ctx = document.getElementById("Reversed");
+        var Random = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ["Merge Sort", "Heap Sort", "Quick Sort", "Insertion Sort", "Radix Sort"],
+                datasets: [{
+                    label: 'Time Taken To Sort in ms',
+                    data: [12, 19, 3, 5, 11],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+
+
+        // Closes the sidebar menu
+        $("#menu-close").click(function (e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+        // Opens the sidebar menu
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+        // Scrolls to the selected menu item on the page
+        $(function () {
+            $('a[href*=#]:not([href=#],[data-toggle],[data-target],[data-slide])').click(function () {
+                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                    if (target.length) {
+                        $('html,body').animate({
+                            scrollTop: target.offset().top
+                        }, 1000);
+                        return false;
+                    }
+                }
+            });
+        });
+        //#to-top button appears after scrolling
+        var fixed = false;
+        $(document).scroll(function () {
+            if ($(this).scrollTop() > 250) {
+                if (!fixed) {
+                    fixed = true;
+                    // $('#to-top').css({position:'fixed', display:'block'});
+                    $('#to-top').show("slow", function () {
+                        $('#to-top').css({
+                            position: 'fixed',
+                            display: 'block'
+                        });
+                    });
+                }
+            } else {
+                if (fixed) {
+                    fixed = false;
+                    $('#to-top').hide("slow", function () {
+                        $('#to-top').css({
+                            display: 'none'
+                        });
+                    });
+                }
+            }
+        });
+
+    </script>
+}
